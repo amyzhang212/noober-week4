@@ -17,6 +17,7 @@ let passengerPickupAddressLine2
 let passengerDropoffAddressLine1
 let passengerDropoffAddressLine2
 let levelOfService 
+let leg 
 
 // define all key variables
 passengerName=leg.passengerDetails.first+" "+leg.passengerDetails.last
@@ -27,18 +28,17 @@ passengerPickupAddressLine2=leg.pickupLocation.city+" "+leg.pickupLocation.state
 passengerDropoffAddressLine1=leg.dropoffLocation.address
 passengerDropoffAddressLine2=leg.dropoffLocation.city+" "+leg.dropoffLocation.state+" "+leg.dropoffLocation.zip
 
-// loop for rides
+// loop for json 
 for (let i=0; i<json.length;i++){
   ride=json[i]
 }
 
+// loop for legs within rides
 let outputElement = document.querySelector('.rides')
 
-// add in HTML 
-
-for (let a=0,a<ride.length; a++){
+for (let a=0; a<ride.length; a++){
   leg = ride[a] 
-  if(ride.length>1){levelOfService = 'Noober Pool'
+  if(leg.length>1){levelOfService = 'Noober Pool'
   outputElement.insertAdjacentElement('beforeend',`
   <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
   <i class="fas fa-car-side"></i>
@@ -71,7 +71,7 @@ for (let a=0,a<ride.length; a++){
   </div>
 </div>
   `)
-  } else if (ride[0].purpleRequested == true) {levelOfService = 'Noober Purple'
+  } else if (leg.purpleRequested == true) {levelOfService = 'Noober Purple'
  outputElement.insertAdjacentElement('beforeend',`<h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
  <i class="fas fa-car-side"></i>
  <span>Noober Purple</span>
@@ -104,7 +104,7 @@ for (let a=0,a<ride.length; a++){
 </div>
 `)
 
-  } else if (ride[0].numberOfPassengers > 3) {levelOfService = 'Noober XL'
+  } else if (leg.numberOfPassengers > 3) {levelOfService = 'Noober XL'
   outputElement.insertAdjacentElement('beforeend',`
   <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
@@ -172,8 +172,8 @@ for (let a=0,a<ride.length; a++){
 </div>
 `) 
 }
-  }
-
+}
+} 
 
 window.addEventListener('DOMContentLoaded', pageLoaded)
 
