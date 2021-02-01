@@ -28,7 +28,7 @@ passengerPickupAddressLine2=leg.pickupLocation.city+" "+leg.pickupLocation.state
 passengerDropoffAddressLine1=leg.dropoffLocation.address
 passengerDropoffAddressLine2=leg.dropoffLocation.city+" "+leg.dropoffLocation.state+" "+leg.dropoffLocation.zip
 
-// loop for json 
+// loop from json 
 for (let i=0; i<json.length;i++){
   ride=json[i]
 }
