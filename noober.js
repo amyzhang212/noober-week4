@@ -17,7 +17,7 @@ let passengerPickupAddressLine2
 let passengerDropoffAddressLine1
 let passengerDropoffAddressLine2
 let levelOfService 
-let leg 
+
 
 // define all key variables
 passengerName=leg.passengerDetails.first+" "+leg.passengerDetails.last
@@ -37,7 +37,7 @@ for (let i=0; i<json.length;i++){
 let outputElement = document.querySelector('.rides')
 
 for (let a=0; a<ride.length; a++){
-  leg = ride[a] 
+  let leg = ride[a] 
   if(leg.length>1){levelOfService = 'Noober Pool'
   outputElement.insertAdjacentElement('beforeend',`
   <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
