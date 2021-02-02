@@ -47,9 +47,9 @@ passengerName=leg.passengerDetails.first+" "+leg.passengerDetails.last
 numberOfPassengers=leg.numberOfPassengers
 passengerPhone= leg.passengerDetails.phoneNumber
 passengerPickupAddressLine1=leg.pickupLocation.address 
-passengerPickupAddressLine2=leg.pickupLocation.city+" "+leg.pickupLocation.state+" "+leg.pickupLocation.zip
+passengerPickupAddressLine2=leg.pickupLocation.city+", "+leg.pickupLocation.state+" "+leg.pickupLocation.zip
 passengerDropoffAddressLine1=leg.dropoffLocation.address
-passengerDropoffAddressLine2=leg.dropoffLocation.city+" "+leg.dropoffLocation.state+" "+leg.dropoffLocation.zip 
+passengerDropoffAddressLine2=leg.dropoffLocation.city+", "+leg.dropoffLocation.state+" "+leg.dropoffLocation.zip 
 
   let outputElement = document.querySelector('.rides')
   outputElement.insertAdjacentHTML('beforeend',`<div class="border-4 ${borderColor} p-4 my-4 text-left">
