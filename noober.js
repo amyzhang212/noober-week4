@@ -14,10 +14,10 @@ for (let i=0; i<json.length;i++){
 let ride=json[i]
 console.log(ride)
 
-if (ride.length>1) {levelOfService = 'Noober Pool'
-} else if (ride[0].purpleRequested == true) {levelOfService = 'Noober Purple'
-} else if (ride[0].numberOfPassengers > 3) {levelOfService = 'Noober XL'
-} else {levelOfService = 'Noober X'}
+if (ride.length>1) {levelOfService = 'Noober Pool', borderColor ='border-gray-900'
+} else if (ride[0].purpleRequested == true) {levelOfService = 'Noober Purple', borderColor= 'border-purple-500'
+} else if (ride[0].numberOfPassengers > 3) {levelOfService = 'Noober XL', borderColor = 'border-gray-900'
+} else {levelOfService = 'Noober X', borderColor ='border-gray-900'}
 
 console.log(levelOfService)
 let outputElement = document.querySelector('.rides')
@@ -52,7 +52,7 @@ passengerDropoffAddressLine1=leg.dropoffLocation.address
 passengerDropoffAddressLine2=leg.dropoffLocation.city+" "+leg.dropoffLocation.state+" "+leg.dropoffLocation.zip 
 
   let outputElement = document.querySelector('.rides')
-  outputElement.insertAdjacentHTML('beforeend',`<div class="border-4 border-gray-900 p-4 my-4 text-left">
+  outputElement.insertAdjacentHTML('beforeend',`<div class="border-4 ${borderColor} p-4 my-4 text-left">
   <div class="flex">
     <div class="w-1/2">
       <h2 class="text-2xl py-1">${passengerName}</h2>
@@ -80,7 +80,6 @@ passengerDropoffAddressLine2=leg.dropoffLocation.city+" "+leg.dropoffLocation.st
   `)
   }
 }
-
 
 } 
 
